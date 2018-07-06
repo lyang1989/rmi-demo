@@ -13,20 +13,17 @@ import java.net.Socket;
  **/
 public class TCPTransport {
 
-    private String host;
+    private String serviceAddress;
 
-    private int port;
-
-    public TCPTransport(String host, int port) {
-        this.host = host;
-        this.port = port;
+    public TCPTransport(String serviceAddress) {
+        this.serviceAddress=serviceAddress;
     }
-
     private Socket newSocket(){
         System.out.println("创建一个新的连接");
         Socket socket;
         try {
-            socket = new Socket(host,port);
+            String[] arrs=serviceAddress.split(":");
+            socket=new Socket(arrs[0],Integer.parseInt(arrs[1]));
             return socket;
         } catch (Exception e) {
             throw new RuntimeException("连接建立失败",e);
