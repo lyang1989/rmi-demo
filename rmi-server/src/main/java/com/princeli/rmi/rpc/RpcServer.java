@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 
 /**
  * @program: rmi-demo
- * @description: ${description}
+ * @description: rpc服务类
  * @author: ly
  * @create: 2018-07-05 08:56
  **/
